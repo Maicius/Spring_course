@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="date" class="java.util.Date"></bean>
+	
+	<bean id="helloBean" class="neu.danny.HelloBean" autowire="byName">
+		<property name="helloWord">
+			<value>Hello!</value>
+		</property>
+	</bean>
+	<!-- 
+		指定"byName"来绑定，则Spring会根据Bean定义时的"id"属性上指定的别名与Setter名称是否一致来进行自动绑定
+		。 注意：如果是"byName"，而且要通过setDate()方法来完成依赖注入的话，则必须保证第一个Bean的id值
+		为"date"名称。
+	 -->
+</beans>

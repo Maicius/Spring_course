@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="internalType" class="neu.danny.InternalType">
+		
+		<property name="isTrue">
+			<value>true</value>
+		</property>
+		
+		<property name="isDouble">
+			<value>0.25</value>
+		</property>
+		
+		<property name="isString">
+			<null></null>
+		</property>
+		
+		<property name="isColor">
+			<value>0,255,0</value>
+		</property>
+		
+		<property name="phoneNumber">
+			<value>neu.danny.PhoneNumber</value>
+		</property>
+
+		<property name="isFile">
+			<value>D:/file.txt</value>
+		</property>
+
+		<property name="isLocale">
+			<value>en_US</value>
+		</property>
+
+		<property name="isURL">
+			<value>http://ttc.neusoft.com</value>
+		</property>
+
+		<property name="isStringArray">
+			<value>one,two,three</value>
+		</property>
+	</bean>
+
+</beans>

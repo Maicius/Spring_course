@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	
+	<!-- 
+			spring bean有两种状态，singleton和non-singleton,
+			区别是singleton在整个生命周期中只实例化一次，由spring进行管理，
+			而non-singleton可以实例化多次，spring不负责进行管理，
+			当有依赖关系存在时，会有这样一个问题，
+			当singleton bean依赖non-singleton bean时，
+			由于singleton bean只初始化一次，而non-singleton可以初始化多次，
+			这样就会造成不同步的现象，解决办法是使用spring提供的lookup方法注入。
+	-->
+	<!-- 
+			lookup-method中name是userManager中方法的名字.这里这个方法的用途是得到由cglib构造的userDao的动态子类. 
+			lookup-mentod中bean是userDao的类型.
+			cglib为我们动态的构造userDao的子类, 当我们的userManager需要userDao的时候, cglib把这个子类对象给userManager. 
+	-->
+	<!-- 
+		1、为了让这个动态子类得以正常工作，需要把CGLIB的jar文件放在classpath里。
+		2、Lookup方法的局限：
+			a.Spring容器要子类化的类不能是final的；
+			b.需要覆盖的方法也不能是final的，可以是protected,但不能是private的，不能是静态的；
+			c.作为方法注入目标的bean不能是序列化的。
+	 -->
+	<bean name="userManager" class="neu.danny.UserManager">
+		<property name="userDao">
+			<ref bean="userDao" />
+		</property>
+		
+		<!-- 指定lookup注入方法，该方法用来保证每次产生的non-singleton bean都是新的实例，使用bean属性确定lookup方法的返回值 -->
+		<lookup-method name="getUserDao" bean="userDao" />
+	</bean>
+	
+	<bean name="userDao" class="neu.danny.UserDao" scope="prototype">
+		<constructor-arg>
+			<value>lookup method</value>
+		</constructor-arg>
+	</bean>
+
+</beans>

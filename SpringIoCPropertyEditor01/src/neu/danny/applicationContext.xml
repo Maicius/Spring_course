@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<!-- 1、使用 PhoneNumber 的构造器注入方式	begin -->
+	<bean id="infoPhone" class="neu.danny.PhoneNumber">
+		<constructor-arg index="0">
+			<value>999</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>666</value>
+		</constructor-arg>
+		<constructor-arg index="2">
+			<value>1818</value>
+		</constructor-arg>
+	</bean>
+<!-- 
+	<bean id="contact" class="neu.danny.Contact">
+		<property name="phoneNumber">
+			<ref bean="infoPhone"/>
+		</property>
+	</bean>
+ -->	
+<!-- 1、使用 PhoneNumber 的构造器注入方式	end -->
+
+
+
+<!--2、使用属性编辑器方式    begin-->
+<!--  -->
+	<bean id="contact" class="neu.danny.Contact">
+		<property name="phoneNumber">
+			<value>888-555-1212</value>
+		</property>
+	</bean>	
+	
+	<bean id="customEditorConfigurer555" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors"><!-- 本name值是CustomEditorConfigurer的属性，Map类型 -->
+			<map>
+				<entry key="neu.danny.PhoneNumber"><!-- 属性类型 -->   
+					<bean id="phoneEditor555" class="neu.danny.PhoneEditor"/><!--对应PhoneNumber的编辑器 -->   
+				</entry>
+			</map>
+		</property>
+	</bean>	
+<!--2、使用属性编辑器方式    end-->
+
+</beans>

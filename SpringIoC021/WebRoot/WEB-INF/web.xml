@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+<!-- 
+	在web.xml文件中配置装配Spring配置文件有两种方式：		
+		1、请为 Servlet 2.3 规范注册 ContextLoaderListener 
+		2、或为 Servlet 2.2 及以下的容器注册 ContextLoaderServlet。
+-->
+
+<!-- 装载Spring配置文件方式一： 配置Servlet		
+		为了保障后向兼容性，请用 ContextLoaderServlet。
+		在启动 Web 应用程序时，ContextLoaderServlet 会装入 Spring 配置文件
+-->		
+		<servlet>
+			<servlet-name>context</servlet-name>
+			<servlet-class>org.springframework.web.context.ContextLoaderServlet</servlet-class>
+			<load-on-startup>1</load-on-startup>
+		</servlet>
+
+<!-- 装载Spring配置文件方式二： 配置Listener		
+		如果想要在自己所定义的Servlet类中使用Spring的容器功能，则也可以使用ContextLoaderListener
+		，例如在web.xml中使用<listener>标签加以定义如下：
+	
+		<listener>
+			<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		</listener>
+-->		
+
+	
+<!-- 
+	以上两种方式都通过contextConfigLocation 参数定义了要装入的 Spring 配置文件:
+	如果没有对contextConfigLocation的配置，则自动寻找/WEB-INF/applicationContext.xml文件；
+	可以尝试隐藏对contextConfigLocation的配置，看效果。
+-->	
+<!--  下面是两种设置contextConfigLocation 参数值的方式，对应 spring配置文件的不同位置
+	1、	<param-value>/WEB-INF/applicationContext.xml,/WEB-INF/applicationContext1.xml</param-value>
+	2、	<param-value>classpath*:neu/danny/applicationContext.xml,classpath*:neu/danny/applicationContext1.xml</param-value>
+
+以上两种都可以使用通配符，如：<param-value>classpath*:neu/danny/applicationContext*.xml</param-value>
+ -->	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:neu/danny/applicationContext*.xml</param-value>
+	</context-param>
+
+
+
+
+
+<!-- 下面是对测试使用的Servlet的配置 -->
+	<servlet>
+		<servlet-name>XmlWebApplicationContextServlet</servlet-name>
+		<servlet-class>
+			neu.danny.XmlWebApplicationContextServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XmlWebApplicationContextServlet</servlet-name>
+		<url-pattern>
+			/servlet/XmlWebApplicationContextServlet
+		</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+
+</web-app>

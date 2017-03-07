@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+<!-- 设置班级 -->	
+	<bean id="classes_1" class="com.neusoft.spring.Classes">
+		<property name="name" value="一班"/>
+	</bean>
+	
+<!-- 设置第一个学生对象 -->	
+	<bean id="student_1" class="com.neusoft.spring.Student">
+		<property name="classes">
+			<ref bean="classes_1"/>
+		</property>
+		<property name="sno" value="1001"/>
+		<property name="name" value="zhangsan"/>
+		<property name="score">
+			<list>
+				<value>90</value>
+				<value>91</value>
+				<value>92</value>
+			</list>
+		</property>
+		<property name="course" >
+			<list>
+				<value>Java</value>
+				<value>Oracle</value>
+				<value>Spring</value>
+			</list>
+		</property>
+		<property name="hobby" >
+			<set>
+				<value>aaa</value>
+				<value>bbb</value>
+				<value>aaa</value>
+				<value>ccc</value>
+			</set>
+		</property>
+		<property name="other">
+			<map>
+				<entry key="a">
+					<value>aaaaa</value>
+				</entry>
+				<entry key="b">
+					<ref bean="classes_1"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+<!-- 设置第二个学生对象 -->
+	<bean id="student_2" class="com.neusoft.spring.Student">
+		<property name="classes">
+			<ref bean="classes_1"/>
+		</property>
+		<property name="sno" value="1002"/>
+		<property name="name" value="lisi"/>
+		<property name="score">
+			<list>
+				<value>80</value>
+				<value>81</value>
+				<value>82</value>
+			</list>
+		</property>
+		<property name="course" >
+			<list>
+				<value>Hibernate</value>
+				<value>C</value>
+				<value>C++</value>
+			</list>
+		</property>
+		<property name="hobby" >
+			<set>
+				<value>qq</value>
+				<value>qq</value>
+				<value>ww</value>
+				<value>ww</value>
+			</set>
+		</property>
+		<property name="other">
+			<map>
+				<entry key="qq">
+					<value>qqqqq</value>
+				</entry>
+				<entry key="ww">
+					<ref bean="classes_1"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

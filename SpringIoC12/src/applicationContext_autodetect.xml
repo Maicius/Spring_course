@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="date2" class="java.util.Date"></bean>
+	
+	<bean id="helloBean" class="neu.danny.HelloBean" autowire="autodetect">
+		<property name="helloWord">
+			<value>Hello!</value>
+		</property>
+	</bean>
+	<!-- 
+		当"autowire"被设定为"autodetect"时，Spring会尝试使用如"autowire"被设定为
+		"constructor"来处理依赖关系的建立，如果没有完成依赖关系建立，则再尝试使用
+		如"autowire"被设定为"byType"的方式来建立依赖关系。
+		
+		注意：这里把autowire="autodetect"改为autowire="constructor"也是可以的，这时采用构造方法建立依赖；
+	 -->
+</beans>

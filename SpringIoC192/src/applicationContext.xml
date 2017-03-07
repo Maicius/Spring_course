@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+ 	
+ 	
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<!-- 
+    		location属性允许你使用单个配置文件，如果你想将配置信息分散到多个配置文件中，
+    		请使用PropertyPlaceholderConfigurer的locations属性设置配置文件列表：
+    	 -->
+    	<property name="locations">
+    		<list>
+    			<value>jdbc.properties</value>
+    			<value>application.properties</value>
+    		</list>
+    	</property>
+    </bean>
+
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- 
+			现在你可以使用占位符变量代替Bean装配文件中的硬编码配置了。
+			语法上，占位符变量采用${variable}的形式，类似于Ant属性以及JavaServerpages(JSP)表达式。
+		 -->
+		<property name="url">
+			<value>${database.url}</value>
+		</property>
+		<property name="driverClassName">
+			<value>${database.driver}</value>
+		</property>
+		<property name="username">
+			<value>${database.user}</value>
+		</property>
+		<property name="password">
+			<value>${database.password}</value>
+		</property>
+	</bean>
+	
+	<bean id="jdbcTest" class="neu.danny.JDBCTest">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+
+</beans>

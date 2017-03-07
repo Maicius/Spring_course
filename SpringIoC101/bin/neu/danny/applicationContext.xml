@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="people" class="neu.danny.People"  >        
+        <property name="age" value="18" />
+        <constructor-arg index="0">
+        	<value>haha</value>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="chinese"  class="neu.danny.Chinese"  parent="people">    
+<!--     	
+		<property name="age" value="28" />
+        <property name="name" value="aaaa" />
+ -->        
+		<property name="height" value="175" />
+    </bean>
+<!--     
+    <bean id="chinese"  parent="people">    
+    </bean>
+ -->    
+ 
+    <bean id="other"  class="neu.danny.OtherCountry" parent="people">    	
+		<property name="height" value="170" />
+    </bean>
+	<!-- 
+		如果子Bean定义没有指定class属性，它将使用父bean定义的class属性，当然也可以覆盖它。
+		在后面一种情况中,子bean的class属性值必须同父bean兼容，也就是说它必须接受父bean的属性值。
+		
+		一个子bean定义可以从父bean继承构造器参数值、属性值以及覆盖父bean的方法，并且可以有
+		选择地增加新的值。
+		
+		如果指定了init-method，destroy-method和/或静态factory-method，它们就会覆盖
+		父bean相应的设置。
+	 -->
+</beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="helloBean" class="neu.danny.HelloBean"> 
+        <constructor-arg index="0" value="helloWordAAAAA"/>
+        <constructor-arg index="1" value="helloWordAAAAA"/>
+<!--         <property name="name" value="maicius"/>
+        <property name="helloWord" value="Hello"/> -->
+    <!--
+    	在定义文件中，使用 <constructor-arg>标签来表示将使用Constructor Injection，
+    	由于使用Constructor Injection并不如Setter Injection这样拥有setXXX()这样易懂的名称，
+    	所以必须指定参数的位置参数索引：index属性就是用于指定对象将注入至构造方法中的哪一个
+    	位置的参数。参数的顺序指定中：第一参数的索引值是0，第二个是1，依次类推。
+     -->
+    </bean>
+    
+</beans>

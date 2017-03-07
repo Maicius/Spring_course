@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	注：
+		在容器层次中通过在<beans/>元素上使用default-lazy-init="true"属性来控制延迟初始化也是可能的。
+ -->
+ <!-- 尝试在beans标记中增加或者删除 default-lazy-init="true" 属性：
+ 	有此属性表示懒加载，在使用时才加载；无此属性，则会先实例化所有bean，再执行代码；-->
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	default-lazy-init="true">
+	
+	<!-- 
+		注：
+		ApplicationContext默认在启动时将所有singleton bean提前进行实例化。
+		如果bean的作用域范围是Prototype的，bean的初始化是在调用该bean的实例时，才会初始化。
+		
+		提前实例化意味着作为初始化过程的一部份，ApplicationContext实例会创建并配置所有的singleton bean。
+		然而，有时候这种默认处理可能并不是你想要的。
+		如果你不想让一个singleton bean在ApplicationContext实现在初始化时被提前实例化，那么可以将bean设置为延迟实例化。
+		一个延迟初始化bean将告诉IoC容器是在启动时还是在第一次被用到时实例化。
+	 -->
+	
+	<bean id="helloBeanLazy" class="neu.danny.HelloBean" lazy-init="true"> 
+        <property name="helloWord">
+            <value>I'm lazy!</value>
+        </property> 
+    </bean> 
+    
+    <bean id="helloBeanNotLazy" class="neu.danny.HelloBean" > 
+        <property name="helloWord">
+            <value>I'm not lazy!</value>
+        </property> 
+    </bean>
+    
+    
+    <!-- 
+    	注：
+			需要说明的是，如果一个bean被设置为延迟初始化，而另一个非延迟初始化的singleton bean依赖于它，
+			那么当ApplicationContext提前实例化singleton bean时，
+			它必须确保所有上述singleton依赖bean也被预先初始化，当然也包括设置为延迟实例化的bean。
+			
+			因此，当IoC容器在启动时创建了那些设置为延迟实例化的Bean的实例，你也不要觉得奇怪，
+			因为那些延迟初始化的Bean可能在配置的某个地方被注入到了一个非延迟初始化singleton bean当中。
+     -->
+     
+    <bean id="dependBean" class="neu.danny.DependBean" lazy-init="true">
+		<property name="helloBean">
+			<ref bean="helloBeanLazy"/>
+		</property>    
+    </bean>
+    
+
+</beans>

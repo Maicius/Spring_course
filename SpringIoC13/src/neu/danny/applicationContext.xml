@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="date" class="java.util.Date"></bean>
+	
+	<!-- 注意：当 autowire="constructor" 并且 dependency-check="all/objects" 时，抛出异常 -->
+	<!-- 如果没有autowire属性，那么dependency-check属性生效，进行检查，然后抛出UnsatisfiedDependencyException -->
+	<!-- 如果没有autowire属性，也没有dependency-check属性，则不会进行检查 -->
+	<bean id="helloBean" class="neu.danny.HelloBean" autowire="byName" dependency-check="all">
+	</bean>
+
+	<!-- 
+		"autowire"属性所设定的几种隐式的自动绑定，由于没办法从定义文件中，清楚地看到是否每个属性都完成设定，
+		为了确定某些依赖关系确实建立，您可以加入依赖检查。
+		在<bean>标签使用时设定"dependency-check"，可以有四种依赖检查方式：
+			"simple"：只检查简单的属性是否完成依赖关系，像是原始数据类型或字符串对象。
+			"objects"：设定检查对象类型的属性是否完成依赖关系
+			"all"：检查全部的属性是否完成依赖关系
+			"none"：设定是默认值，表示不检查依赖性。
+		
+		注：
+			一旦使用了自动绑定时加入了依赖检查设定，如果进行依赖检查时发现有未完成的依赖关系，则执行程序时
+		会抛出UnsatisfiedDependencyException异常。
+		
+		注：
+			Spring的依赖检查特性只对属性是否通过 setter 方法设置进行检查。 所以，即使通过构造器注入，依然会抛出异常。
+			autowire="autodetect"
+			autowire="byName"
+			autowire="byType"
+			autowire="constructor"
+			
+	 -->
+</beans>

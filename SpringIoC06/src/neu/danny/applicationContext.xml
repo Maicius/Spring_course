@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	
+	<!--
+		假如在单个Spring容器内定义了某个指定class的Bean，那么Spring容器将会创建一个且
+		仅有一个由该Bean定义指定的类实例。
+		
+		Singleton作用域是Spring中的缺省作用域。 		
+		注：
+			1、在Spring中，从BeanFactory或ApplicationContext取得的实例为Singleton（单例），
+				也就是预设为每一个Bean的别名只维持一个实例。
+				例如：每一次context.getBean(“helloBean”)取得的对象都是同一个，而不是每一次都产生一个新的对象。
+			2、使用Singleton模式产生单一实例，对单线程的程序来说并不会有什么问题，但对于多线程的程序，
+				您必须注意到线程安全(Thread-safe)
+				的议题，防止多个线程同时存取共享资源所引发的数据不同步问题。
+			3、在Spring中，可以设定每次从BeanFactory或ApplicationContext指定别名并取得Bean时都产生一个新的实例。例如：
+				<bean id=“helloBean” class=“neu.danny.HelloBean” singleton=“false”>。
+			4、在Spring中singleton属性预设是”true”，籍由将其设定为”false”，则每次指定别名来取得Bean时都会产生一个新的实例。
+			5、Spring1.2的DTD继续使用“singleton”属性，但是新的Spring2.0 DTD不允许使用“singleton”属性了，
+				改成“scope”属性来描述bean的生命周期。
+	 -->
+	 
+	 <!-- singleton  prototype -->
+	 <bean id="helloBean" class="neu.danny.HelloBean" scope="singleton"> 
+        <property name="helloWord">
+            <value>Hello! Justin!</value>
+        </property> 
+    </bean> 
+
+</beans>

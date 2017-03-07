@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="date22444" class="java.util.Date"/>
+	<!-- 同样不能有多个相同类型的对象
+		<bean id="date3" class="java.util.Date"/>
+	 -->
+	 
+	<bean id="helloBean" class="neu.danny.HelloBean" autowire="constructor" >
+		<property name="helloWord">
+			<value>Hello!</value>
+		</property>
+	</bean>
+	<!-- 
+		"autowire"设定为"constructor"，在建立依赖关系时，Spring容器会试图比对容器中的Bean实例类型，及相关
+		的构造方法上的参数类型，看看在类型上是否符合，如果有的话，则选用该构造方法来建立Bean的实例。
+	 -->
+</beans>

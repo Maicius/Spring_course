@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="people"  abstract="true">
+        <property name="company" value="NeuSoft" />
+    </bean>
+    
+    <bean id="chinese" class="neu.danny.Chinese" parent="people">
+    	<property name="name" value="danny"></property>
+    	<property name="age" value="18"></property>
+    </bean>
+    
+    <bean id="english" class="neu.danny.English" parent="people">
+    	<property name="name" value="rose"></property>
+    	<property name="age" value="20"></property>
+    </bean>
+	
+	<!-- 
+		当父bean定义并没有指定class属性时，其中父bean必须显式地标上abstract。		
+		由于这样的父bean是不完整的，而且还被显式标记为“抽象的”，因而它无法得到自己的实例。
+		
+		抽象bean定义可作为子bean定义的模板。
+		
+		如果想要尝试单独使用这样的父bean(比如将它作为其他bean的ref属性而引用，或者直接使用
+		这个父bean的id作为参数调用getBean()方法)，将会导致错误。		
+		同样地，容器内部的preInstantiateSingletons()方法会完全忽略abstract的bean定义。	
+	 -->
+
+</beans>

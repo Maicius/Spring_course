@@ -1,2 +1,2 @@
 # Spring_course
-the course of Java Spring
+the courses of Java Spring
