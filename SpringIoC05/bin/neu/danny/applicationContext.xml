@@ -19,7 +19,7 @@
     
     <bean id="someBean" class="neu.danny.SomeBean">
     
-        <property name="SomeStrAry">
+        <property name="someStrAry">
             <list>
                 <value>Hello</value>
                 <value>Welcome</value>

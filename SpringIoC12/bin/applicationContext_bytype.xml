@@ -6,8 +6,8 @@
 	
 	<bean id="dateBean22" class="java.util.Date"></bean>
 	<!--  注意：需要保证只有一个bean的类型与byType中的属性匹配
-		<bean id="dateBean223" class="java.util.Date"></bean> 
-	 -->
+		<bean id="dateBean223" class="java.util.Date"></bean>
+	 &ndash;&gt;-->
 	
 	<bean id="helloBean" class="neu.danny.HelloBean" autowire="byType">
 		<property name="helloWord">

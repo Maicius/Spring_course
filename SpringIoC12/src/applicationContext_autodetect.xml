@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 	
-	<bean id="date2" class="java.util.Date"></bean>
+	<bean id="date" class="java.util.Date"></bean>
 	
 	<bean id="helloBean" class="neu.danny.HelloBean" autowire="autodetect">
 		<property name="helloWord">

@@ -1,7 +1,4 @@
-package neu.danny; 
-/**
- * ClassPathXmlApplicationContext加载xml时已经进行了
- */
+package neu.danny;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
@@ -21,7 +18,7 @@ public class SpringDemo {
          */
 //        Resource rs = new FileSystemResource("applicationContext.xml");
     	System.out.println("Factory  begin load...");
-        Resource rs = new FileSystemResource("aaa/applicationContext.xml");
+        Resource rs = new FileSystemResource("I:\\SpringTest\\SpringIoC01\\aaa\\applicationContext.xml");
 
         /*
          * BeanFactory��Factoryģʽ��һ��ʵ�����ӣ�����;��Ϊһ�㣬���Խ���������ͬ���͵Ķ���

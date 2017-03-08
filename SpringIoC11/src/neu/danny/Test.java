@@ -9,8 +9,8 @@ public class Test {
     public static void main(String[] args) {
         //注意：如果想调用destroy方法，需要使用子类ClassPathXmlApplicationContext来声明对象；
 //         ApplicationContext context =  new ClassPathXmlApplicationContext("applicationContext.xml"); 
-        ClassPathXmlApplicationContext context =  new ClassPathXmlApplicationContext("applicationContext.xml"); 
-        
+        //ClassPathXmlApplicationContext context =  new ClassPathXmlApplicationContext("applicationContext.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
          JavaBean bean=(JavaBean)context.getBean("javaBean");
          System.out.println("获取name属性："+bean.getName());
         

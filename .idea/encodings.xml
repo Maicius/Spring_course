@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/SpringIoC01/src/neu/danny/SpringDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/SpringIoC07/src/neu/danny/SpringDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/SpringIoC09/src/neu/danny/SpringDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/SpringIoC11/src/neu/danny/JavaBean.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/SpringIoC11/src/neu/danny/Test.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/SpringIoC11/src/neu/danny/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/SpringIoC12/src/neu/danny/HelloBean.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/SpringIoC13/src/neu/danny/SpringDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/SpringIoC14/src/neu/danny/BeanNameAware_Interface.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/SpringIoCResource01/src/neu/danny/XmlWebApplicationContextServlet.java" charset="GBK" />
+  </component>
+</project>

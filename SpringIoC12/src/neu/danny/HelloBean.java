@@ -16,7 +16,8 @@ public class HelloBean {
     	this.date=date;
     }
     
-    public void setHelloWord(String helloWord) { 
+    public void setHelloWord(String helloWord) {
+        System.out.println("setHelloWord");
         this.helloWord = helloWord; 
     } 
     public String getHelloWord() { 

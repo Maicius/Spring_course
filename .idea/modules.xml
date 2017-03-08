@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC00/SpringIoC00.iml" filepath="$PROJECT_DIR$/SpringIoC00/SpringIoC00.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC01/SpringIoC01.iml" filepath="$PROJECT_DIR$/SpringIoC01/SpringIoC01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC02/SpringIoC02.iml" filepath="$PROJECT_DIR$/SpringIoC02/SpringIoC02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC021/SpringIoC021.iml" filepath="$PROJECT_DIR$/SpringIoC021/SpringIoC021.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC022/SpringIoC022.iml" filepath="$PROJECT_DIR$/SpringIoC022/SpringIoC022.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC03/SpringIoC03.iml" filepath="$PROJECT_DIR$/SpringIoC03/SpringIoC03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC04/SpringIoC04.iml" filepath="$PROJECT_DIR$/SpringIoC04/SpringIoC04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC05/SpringIoC05.iml" filepath="$PROJECT_DIR$/SpringIoC05/SpringIoC05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC06/SpringIoC06.iml" filepath="$PROJECT_DIR$/SpringIoC06/SpringIoC06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC07/SpringIoC07.iml" filepath="$PROJECT_DIR$/SpringIoC07/SpringIoC07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC081/SpringIoC081.iml" filepath="$PROJECT_DIR$/SpringIoC081/SpringIoC081.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC082/SpringIoC082.iml" filepath="$PROJECT_DIR$/SpringIoC082/SpringIoC082.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC09/SpringIoC09.iml" filepath="$PROJECT_DIR$/SpringIoC09/SpringIoC09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC101/SpringIoC101.iml" filepath="$PROJECT_DIR$/SpringIoC101/SpringIoC101.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC102/SpringIoC102.iml" filepath="$PROJECT_DIR$/SpringIoC102/SpringIoC102.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC11/SpringIoC11.iml" filepath="$PROJECT_DIR$/SpringIoC11/SpringIoC11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC12/SpringIoC12.iml" filepath="$PROJECT_DIR$/SpringIoC12/SpringIoC12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC13/SpringIoC13.iml" filepath="$PROJECT_DIR$/SpringIoC13/SpringIoC13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC14/SpringIoC14.iml" filepath="$PROJECT_DIR$/SpringIoC14/SpringIoC14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC15/SpringIoC15.iml" filepath="$PROJECT_DIR$/SpringIoC15/SpringIoC15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC16/SpringIoC16.iml" filepath="$PROJECT_DIR$/SpringIoC16/SpringIoC16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC17/SpringIoC17.iml" filepath="$PROJECT_DIR$/SpringIoC17/SpringIoC17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC18/SpringIoC18.iml" filepath="$PROJECT_DIR$/SpringIoC18/SpringIoC18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC191/SpringIoC191.iml" filepath="$PROJECT_DIR$/SpringIoC191/SpringIoC191.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoC192/SpringIoC192.iml" filepath="$PROJECT_DIR$/SpringIoC192/SpringIoC192.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoCLifecycleApplicationContext1/SpringIoCLifecycleApplicationContext1.iml" filepath="$PROJECT_DIR$/SpringIoCLifecycleApplicationContext1/SpringIoCLifecycleApplicationContext1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoCLifecycleBeanFactory1/SpringIoCLifecycleBeanFactory1.iml" filepath="$PROJECT_DIR$/SpringIoCLifecycleBeanFactory1/SpringIoCLifecycleBeanFactory1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoCListener01/SpringIoCListener01.iml" filepath="$PROJECT_DIR$/SpringIoCListener01/SpringIoCListener01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoCPropertyEditor01/SpringIoCPropertyEditor01.iml" filepath="$PROJECT_DIR$/SpringIoCPropertyEditor01/SpringIoCPropertyEditor01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoCPropertyEditor02/SpringIoCPropertyEditor02.iml" filepath="$PROJECT_DIR$/SpringIoCPropertyEditor02/SpringIoCPropertyEditor02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIoCResource01/SpringIoCResource01.iml" filepath="$PROJECT_DIR$/SpringIoCResource01/SpringIoCResource01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-PropertyEditor/SpringPropertyEditor.iml" filepath="$PROJECT_DIR$/Spring-PropertyEditor/SpringPropertyEditor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-whySpring_1/spring-whySpring_1.iml" filepath="$PROJECT_DIR$/spring-whySpring_1/spring-whySpring_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-whySpring_2/spring-whySpring_2.iml" filepath="$PROJECT_DIR$/spring-whySpring_2/spring-whySpring_2.iml" />
+    </modules>
+  </component>
+</project>
