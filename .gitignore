@@ -5,3 +5,10 @@
 *.eml
 *.iml
 *.properties
+*.classpath___jb_tmp___
+*.jsdtscope
+*.container
+*.component
+*.prefs
+.settings/org.eclipse.wst.common.project.facet.core.xml
+*.name

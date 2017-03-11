@@ -1,0 +1,12 @@
+商品信息修改
+@RequestMapping
+1、url映射
+定义controller方法对应的url，进行处理器映射使用。
+@RequestMapping("/editItems")
+
+
+2、窄化请求映射
+@RequestMapping("/items")
+
+3、限制http请求方法
+@RequestMapping(value="/editItems",method={RequestMethod.GET,RequestMethod.POST} )

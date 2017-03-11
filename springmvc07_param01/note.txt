@@ -1,0 +1,10 @@
+商品信息修改
+参数绑定
+简单类型绑定
+通过@RequestParam对简单类型的参数进行绑定。
+如果不使用@RequestParam，要求request传入参数名称和controller方法的形参名称一致，方可绑定成功。
+
+如果使用@RequestParam，不用限制request传入参数名称和controller方法的形参名称一致。
+
+pojo绑定
+页面中input的name和controller的pojo形参中的属性名称一致，将页面中数据绑定到pojo。
